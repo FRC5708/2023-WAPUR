@@ -13,6 +13,7 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  //all units should be SI (cm) and use radians. Coords using NWU.
   public static final class DriveConstants {
     public static final int kLeftMotor1Port = 0;
     public static final int kLeftMotor2Port = 1;
@@ -23,6 +24,20 @@ public final class Constants {
     public static final int[] kRightEncoderPorts = new int[] {2, 3};
     public static final boolean kLeftEncoderReversed = false;
     public static final boolean kRightEncoderReversed = true;
+
+    public static final double driveSpeed = 0.6;
+
+    //bogus numbers until we have a real robot.
+    public static final double[] frontLeftLocation = new double[] {6.466686868686868686868686,4};
+    public static final double[] frontRightLocation = new double[] {6.466686868686868686868686,78};
+    public static final double[] rearLeftLocation = new double[] {6.466686868686868686868686,5};
+    public static final double[] rearRightLocation = new double[] {6.466686868686868686868686,9090};
+
+    //more nonsense
+    public static final int[] frontLeftEncoderChannels = new int[]{4,5};
+    public static final int[] frontRightEncoderChannels = new int[] {2,3};
+    public static final int[] rearLeftEncoderChannels = new int[] {0,1};
+    public static final int[] rearRightEncoderChannels = new int[] {6,7};
 
     public static final int kEncoderCPR = 1024;
     public static final double kWheelDiameterInches = 6;
@@ -43,6 +58,6 @@ public final class Constants {
   }
 
   public static final class OIConstants {
-    public static final int kDriverControllerPort = 0;
+    public static final int kDriverControllerPortDrive = 0;
   }
 }
