@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
-import com.ctre.phoenix6.hardware.*;
+import com.ctre.phoenix.motorcontrol.can.*;
+import com.ctre.phoenix.motorcontrol.*;
 
 import frc.robot.Constants.DriveConstants;
 import frc.robot.RobotContainer;
@@ -29,16 +30,16 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 
 public class DriveTrain extends SubsystemBase {
     //Left side motors
-    private TalonFX m_frontLeftMotor = new TalonFX(DriveConstants.kLeftMotor1Port);
-    private TalonFX m_rearLeftMotor = new TalonFX(DriveConstants.kLeftMotor2Port);
+    private WPI_VictorSPX m_frontLeftMotor = new WPI_VictorSPX(DriveConstants.kFrontLeftMotorID);
+    private WPI_VictorSPX m_rearLeftMotor = new WPI_VictorSPX(DriveConstants.kRearLeftMotorID);
 
     // Right side motors
-    private TalonFX m_frontRightMotor = new TalonFX(DriveConstants.kRightMotor1Port);
-    private TalonFX m_rearRightMotor = new TalonFX(DriveConstants.kRightMotor2Port);
+    private WPI_VictorSPX m_frontRightMotor = new WPI_VictorSPX(DriveConstants.kFrontRightMotorID);
+    private WPI_VictorSPX m_rearRightMotor = new WPI_VictorSPX(DriveConstants.kRearRightMotorID);
 
     private final MecanumDrive m_drive = new MecanumDrive(m_frontLeftMotor,m_rearLeftMotor,m_frontRightMotor,m_rearRightMotor);
     
-    private final Translation2d m_frontLeftLocation = new Translation2d(DriveConstants.frontLeftLocation[0],DriveConstants.frontLeftLocation[1]);
+    /*private final Translation2d m_frontLeftLocation = new Translation2d(DriveConstants.frontLeftLocation[0],DriveConstants.frontLeftLocation[1]);
     private final Translation2d m_frontRightLocation = new Translation2d(DriveConstants.frontRightLocation[0],DriveConstants.frontRightLocation[1]);
     private final Translation2d m_rearLeftLocation = new Translation2d(DriveConstants.rearLeftLocation[0],DriveConstants.rearLeftLocation[1]);
     private final Translation2d m_rearRightLocation = new Translation2d(DriveConstants.rearRightLocation[0],DriveConstants.rearRightLocation[1]);
@@ -48,10 +49,10 @@ public class DriveTrain extends SubsystemBase {
     private final Encoder m_rearLeftEncoder = new Encoder(DriveConstants.rearLeftEncoderChannels[0], DriveConstants.rearLeftEncoderChannels[1]);
     private final Encoder m_rearRightEncoder = new Encoder(DriveConstants.rearRightEncoderChannels[0], DriveConstants.rearRightEncoderChannels[1]);
 
-    private final AnalogGyro m_gyro = new AnalogGyro(0);
+    private final AnalogGyro m_gyro = new AnalogGyro(0);*/
 
     public DriveTrain() {
-        m_gyro.reset();
+       // m_gyro.reset();
 
         m_frontRightMotor.setInverted(true);
         m_rearRightMotor.setInverted(true);
