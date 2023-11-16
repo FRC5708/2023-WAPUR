@@ -30,12 +30,12 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 
 public class DriveTrain extends SubsystemBase {
     //Left side motors
-    private WPI_VictorSPX m_frontLeftMotor = new WPI_VictorSPX(DriveConstants.kFrontLeftMotorID);
-    private WPI_VictorSPX m_rearLeftMotor = new WPI_VictorSPX(DriveConstants.kRearLeftMotorID);
+    private WPI_TalonSRX m_frontLeftMotor = new WPI_TalonSRX(DriveConstants.kFrontLeftMotorID);
+    private WPI_TalonSRX m_rearLeftMotor = new WPI_TalonSRX(DriveConstants.kRearLeftMotorID);
 
     // Right side motors
-    private WPI_VictorSPX m_frontRightMotor = new WPI_VictorSPX(DriveConstants.kFrontRightMotorID);
-    private WPI_VictorSPX m_rearRightMotor = new WPI_VictorSPX(DriveConstants.kRearRightMotorID);
+    private WPI_TalonSRX m_frontRightMotor = new WPI_TalonSRX(DriveConstants.kFrontRightMotorID);
+    private WPI_TalonSRX m_rearRightMotor = new WPI_TalonSRX(DriveConstants.kRearRightMotorID);
 
     private final MecanumDrive m_drive = new MecanumDrive(m_frontLeftMotor,m_rearLeftMotor,m_frontRightMotor,m_rearRightMotor);
     
