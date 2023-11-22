@@ -63,7 +63,38 @@ public class DriveTrain extends SubsystemBase {
     public void drive(double xSpeed, double ySpeed, double zRot) {
         m_drive.driveCartesian(ySpeed,xSpeed,zRot);
     }
-/* 
+
+    public void oneMotor(double speed, int motor) {
+
+        switch(motor) {
+        case 0:
+            m_frontRightMotor.set(speed);
+            m_frontLeftMotor.set(0);
+            m_rearRightMotor.set(0);
+            m_rearLeftMotor.set(0);
+            break;
+        case 1:
+            m_frontRightMotor.set(0);
+            m_frontLeftMotor.set(speed);
+            m_rearRightMotor.set(0);
+            m_rearLeftMotor.set(0);
+            break;
+        case 2:
+            m_frontRightMotor.set(0);
+            m_frontLeftMotor.set(0);
+            m_rearRightMotor.set(speed);
+            m_rearLeftMotor.set(0);
+            break;
+        case 3:
+            m_frontRightMotor.set(0);
+            m_frontLeftMotor.set(0);
+            m_rearRightMotor.set(0);
+            m_rearLeftMotor.set(speed);
+            break;
+
+        }
+    }
+    /* 
     private final MecanumDriveKinematics m_kinematics =
       new MecanumDriveKinematics(
           m_frontLeftLocation, m_frontRightLocation, m_rearLeftLocation, m_rearRightLocation);

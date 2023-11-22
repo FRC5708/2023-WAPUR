@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.TestMotor;
 
 import static edu.wpi.first.wpilibj.XboxController.Button;
 import static edu.wpi.first.wpilibj.Joystick.ButtonType;
@@ -35,13 +36,12 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    // Configure the button bindings
-    configureButtonBindings();
-
     m_controller =  new XboxController(OIConstants.kDriverControllerPortDrive);
   
-    m_drive.setDefaultCommand(
-    new DefaultDrive(m_drive,m_controller.getLeftX(),m_controller.getLeftY(),m_controller.getRightX()));
+    configureButtonBindings();
+
+    m_drive.setDefaultCommand(new DefaultDrive(m_drive,m_controller));
+    //m_drive.setDefaultCommand(new TestMotor(m_drive));
   }
 
   /**

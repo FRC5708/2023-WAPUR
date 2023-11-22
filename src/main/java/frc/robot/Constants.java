@@ -15,10 +15,13 @@ package frc.robot;
 public final class Constants {
   //all units should be SI (cm) and use radians. Coords using NWU.
   public static final class DriveConstants {
-    public static final int kRearLeftMotorID = 0;
-    public static final int kRearRightMotorID = 1;
-    public static final int kFrontLeftMotorID = 2;
-    public static final int kFrontRightMotorID = 3;
+    public static final int kFrontLeftMotorID = 5;
+    public static final int kFrontRightMotorID = 6;
+    public static final int kRearLeftMotorID = 7;
+    public static final int kRearRightMotorID = 8;
+    //public static final int kLiftMotorID = 1;
+    //public static final int kRightArmMotorID = 2;
+    //public static final int kLeftArmMotorID = 3;
 
     public static final int[] kLeftEncoderPorts = new int[] {0, 1};
     public static final int[] kRightEncoderPorts = new int[] {2, 3};

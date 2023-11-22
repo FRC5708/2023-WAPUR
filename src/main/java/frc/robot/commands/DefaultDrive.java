@@ -2,22 +2,19 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj.XboxController;
 
 public class DefaultDrive extends CommandBase {
-    private DriveTrain m_drive;;
-    private double m_xSpeed;
-    private double m_ySpeed;
-    private double m_zRot;
+    private DriveTrain m_drive;
+    private XboxController m_controller;
 
-    public DefaultDrive(DriveTrain drive, double x, double y, double z) {
-        m_xSpeed = x;
-        m_ySpeed = y;
-        m_zRot = z;
+    public DefaultDrive(DriveTrain drive,XboxController controller) {
         m_drive = drive;
+        m_controller = controller;
         addRequirements(m_drive);
     }
 
     public void execute() {
-        m_drive.drive(m_xSpeed,m_ySpeed,m_zRot);
+        m_drive.drive(m_controller.getLeftX(),m_controller.getLeftY(),m_controller.getRightX());
     }
 }
