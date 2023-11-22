@@ -84,8 +84,12 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-    SmartDashboard.putNumber("motor speed", 0);
-    SmartDashboard.putNumber("motor number", 0);
+    //SmartDashboard.putNumber("motor speed", 0);
+    //SmartDashboard.putNumber("motor number", 0);
+
+    SmartDashboard.putNumber("X",0);
+    SmartDashboard.putNumber("Y",0);
+    SmartDashboard.putNumber("rotation",0);
   }
 
   /** This function is called periodically during operator control. */
