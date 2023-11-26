@@ -28,7 +28,10 @@ public final class Constants {
     public static final boolean kLeftEncoderReversed = false;
     public static final boolean kRightEncoderReversed = true;
 
-    public static final double driveSpeed = 0.6;
+    public static final double driveSpeed = 0.5;
+    public static final double xSlewRate = 0.8;
+    public static final double ySlewRate = 0.8;
+    public static final double rotSlewRate = 0.75;
 
     //bogus numbers until we have a real robot.
     public static final double[] frontLeftLocation = new double[] {6.466686868686868686868686,4};

@@ -19,6 +19,7 @@ import frc.robot.commands.DefaultDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import java.util.function.DoubleSupplier;
 
 import frc.robot.Constants.OIConstants;
 
@@ -39,9 +40,19 @@ public class RobotContainer {
     m_controller =  new XboxController(OIConstants.kDriverControllerPortDrive);
   
     configureButtonBindings();
-
-    m_drive.setDefaultCommand(new DefaultDrive(m_drive,m_controller));
+        //m_controller.getLeftX();
+        //m_controller.getLeftY();
+        //m_controller.rotation();
+        //OR, for not joystick:
+        //SmartDashboard.getNumber("X",0);
+        //SmartDashboard.getNumber("Y",0);
+        //SmartDashboard.getNumber("rotation",0);
+    m_drive.setDefaultCommand(new DefaultDrive(m_drive, 
+    () -> m_controller.getLeftX(),
+    () -> m_controller.getLeftY(),
+    () -> m_controller.getRightX()));
     //m_drive.setDefaultCommand(new TestMotor(m_drive));
+    
   }
 
   /**
