@@ -21,12 +21,14 @@ public class DefaultDrive extends CommandBase {
         addRequirements(m_drive);
     }
 
+    
+
     public void execute() {
 
         //m_xSpeed = SmartDashboard.getNumber("X",0);
         //m_ySpeed = SmartDashboard.getNumber("Y",0);
         //m_rotation = SmartDashboard.getNumber("rotation",0);
 
-        m_drive.drive(m_xSpeed.getAsDouble(),m_ySpeed.getAsDouble(),m_rotation.getAsDouble());
+        m_drive.drive(m_xSpeed.getAsDouble(),-m_ySpeed.getAsDouble(),m_rotation.getAsDouble());
     }
 }

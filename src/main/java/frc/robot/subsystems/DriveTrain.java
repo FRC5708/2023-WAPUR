@@ -24,6 +24,7 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import edu.wpi.first.math.filter.SlewRateLimiter;
 
 
 
@@ -39,6 +40,9 @@ public class DriveTrain extends SubsystemBase {
 
     private final MecanumDrive m_drive = new MecanumDrive(m_frontLeftMotor,m_rearLeftMotor,m_frontRightMotor,m_rearRightMotor);
     
+    private final SlewRateLimiter m_xFilter = new SlewRateLimiter(DriveConstants.xSlewRate);
+    private final SlewRateLimiter m_yFilter = new SlewRateLimiter(DriveConstants.ySlewRate);
+    private final SlewRateLimiter m_rotFilter = new SlewRateLimiter(DriveConstants.rotSlewRate);
     /*private final Translation2d m_frontLeftLocation = new Translation2d(DriveConstants.frontLeftLocation[0],DriveConstants.frontLeftLocation[1]);
     private final Translation2d m_frontRightLocation = new Translation2d(DriveConstants.frontRightLocation[0],DriveConstants.frontRightLocation[1]);
     private final Translation2d m_rearLeftLocation = new Translation2d(DriveConstants.rearLeftLocation[0],DriveConstants.rearLeftLocation[1]);

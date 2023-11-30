@@ -11,6 +11,10 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard; 
 import frc.robot.commands.TestMotor;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.commands.DefaultDrive;
+import edu.wpi.first.wpilibj.XboxController;
+
+import java.util.function.DoubleSupplier;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -23,9 +27,6 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  DriveTrain m_drive = new DriveTrain();
-  TestMotor m_command =new TestMotor(m_drive);
-  
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -90,11 +91,16 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("X",0);
     SmartDashboard.putNumber("Y",0);
     SmartDashboard.putNumber("rotation",0);
+
+
+    
   }
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    m_robotContainer.drive();
+  }
   
     
   @Override
