@@ -22,6 +22,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.Constants.OIConstants;
 
+import java.util.function.DoubleSupplier;
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -40,7 +42,10 @@ public class RobotContainer {
   
     configureButtonBindings();
 
-    m_drive.setDefaultCommand(new DefaultDrive(m_drive,m_controller));
+    /*m_drive.setDefaultCommand(new DefaultDrive(m_drive,
+    () -> m_controller.getLeftX(),
+    () -> m_controller.getLeftY(),
+    () -> m_controller.getRightX()));*/
     //m_drive.setDefaultCommand(new TestMotor(m_drive));
   }
 
@@ -50,7 +55,16 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
+
+   public void drive() {
+    m_drive.drive(m_controller.getLeftX(),-m_controller.getLeftY(),m_controller.getRightX());
+  } 
+
   private void configureButtonBindings() {}
+
+  private void drive() {
+
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
