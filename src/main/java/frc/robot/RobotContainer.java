@@ -62,10 +62,6 @@ public class RobotContainer {
 
   private void configureButtonBindings() {}
 
-  private void drive() {
-
-  }
-
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
