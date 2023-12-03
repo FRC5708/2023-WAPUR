@@ -19,7 +19,7 @@ import frc.robot.commands.DefaultDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-
+import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
 
 import java.util.function.DoubleSupplier;
@@ -57,7 +57,7 @@ public class RobotContainer {
    */
 
    public void drive() {
-    m_drive.drive(m_controller.getLeftX(),-m_controller.getLeftY(),m_controller.getRightX());
+    m_drive.drive(DriveConstants.driveSpeed*m_controller.getLeftX(),-DriveConstants.driveSpeed*m_controller.getLeftY(),m_controller.getRightX());
   } 
 
   private void configureButtonBindings() {}

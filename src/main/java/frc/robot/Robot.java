@@ -23,8 +23,7 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  DriveTrain m_drive = new DriveTrain();
-  TestMotor m_command =new TestMotor(m_drive);
+
   
   /**
    * This function is run when the robot is first started up and should be used for any
