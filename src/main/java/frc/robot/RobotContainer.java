@@ -23,6 +23,8 @@ import java.util.function.DoubleSupplier;
 
 import frc.robot.Constants.OIConstants;
 
+import java.util.function.DoubleSupplier;
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -40,17 +42,11 @@ public class RobotContainer {
     m_controller =  new XboxController(OIConstants.kDriverControllerPortDrive);
   
     configureButtonBindings();
-        //m_controller.getLeftX();
-        //m_controller.getLeftY();
-        //m_controller.rotation();
-        //OR, for not joystick:
-        //SmartDashboard.getNumber("X",0);
-        //SmartDashboard.getNumber("Y",0);
-        //SmartDashboard.getNumber("rotation",0);
-    m_drive.setDefaultCommand(new DefaultDrive(m_drive, 
+
+    /*m_drive.setDefaultCommand(new DefaultDrive(m_drive,
     () -> m_controller.getLeftX(),
     () -> m_controller.getLeftY(),
-    () -> m_controller.getRightX()));
+    () -> m_controller.getRightX()));*/
     //m_drive.setDefaultCommand(new TestMotor(m_drive));
     
   }
@@ -61,6 +57,11 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
+
+   public void drive() {
+    m_drive.drive(m_controller.getLeftX(),-m_controller.getLeftY(),m_controller.getRightX());
+  } 
+
   private void configureButtonBindings() {}
 
   /**

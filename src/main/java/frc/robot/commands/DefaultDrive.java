@@ -13,18 +13,15 @@ public class DefaultDrive extends CommandBase {
     private DoubleSupplier m_ySpeed;
     private DoubleSupplier m_rotation;
 
-    public DefaultDrive(DriveTrain drive,DoubleSupplier xSpeed, DoubleSupplier ySpeed, DoubleSupplier rot) {
+    public DefaultDrive(DriveTrain drive,DoubleSupplier xSpeed,DoubleSupplier ySpeed,DoubleSupplier rotation) {
         m_drive = drive;
         m_xSpeed = xSpeed;
         m_ySpeed = ySpeed;
-        m_rotation = rot;
+        m_rotation = rotation;
         addRequirements(m_drive);
     }
 
     public void execute() {
-        //m_xSpeed = m_controller.getLeftX();
-        //m_ySpeed = m_controller.getLeftY();
-        //m_rotation = m_controller.rotation();
 
         //m_xSpeed = SmartDashboard.getNumber("X",0);
         //m_ySpeed = SmartDashboard.getNumber("Y",0);
