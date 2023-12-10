@@ -23,8 +23,6 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  DriveTrain m_drive = new DriveTrain();
-  TestMotor m_command =new TestMotor(m_drive);
   
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -95,7 +93,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    m_robotContainer.drive();
+    //m_robotContainer.drive();
   }
   
     

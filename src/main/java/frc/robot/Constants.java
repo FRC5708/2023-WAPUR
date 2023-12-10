@@ -42,7 +42,10 @@ public final class Constants {
     public static final int kRightPokeyMotorID = 2;
     public static final int kLeftPokeyMotorID = 3;
     public static final int kPulleyMotorID = 1;
-    public static final int kLaserEyePort = 0;
+    public static final int kDistanceSensorPort = 0;
+    public static final double kPokeySpeed = 0.8;
+    public static final double[] setPoints = {0,00,0,0};
+    public static final double kBangBangSpeed = 0.4;
   }
 
   public static final class AutoConstants {
