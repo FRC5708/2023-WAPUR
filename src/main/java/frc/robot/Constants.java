@@ -23,27 +23,13 @@ public final class Constants {
     //public static final int kRightArmMotorID = 2;
     //public static final int kLeftArmMotorID = 3;
 
-    public static final int[] kLeftEncoderPorts = new int[] {0, 1};
-    public static final int[] kRightEncoderPorts = new int[] {2, 3};
-    public static final boolean kLeftEncoderReversed = false;
-    public static final boolean kRightEncoderReversed = true;
 
     public static final double driveSpeed = 0.5;
-    public static final double xSlewRate = 0.8;
-    public static final double ySlewRate = 0.8;
-    public static final double rotSlewRate = 0.75;
+    public static final double xSlewRate = 0.9;
+    public static final double ySlewRate = 0.9;
+    public static final double rotSlewRate = 0.9;
 
-    //bogus numbers until we have a real robot.
-    public static final double[] frontLeftLocation = new double[] {6.466686868686868686868686,4};
-    public static final double[] frontRightLocation = new double[] {6.466686868686868686868686,78};
-    public static final double[] rearLeftLocation = new double[] {6.466686868686868686868686,5};
-    public static final double[] rearRightLocation = new double[] {6.466686868686868686868686,9090};
 
-    //more nonsense
-    public static final int[] frontLeftEncoderChannels = new int[]{4,5};
-    public static final int[] frontRightEncoderChannels = new int[] {2,3};
-    public static final int[] rearLeftEncoderChannels = new int[] {0,1};
-    public static final int[] rearRightEncoderChannels = new int[] {6,7};
 
     public static final int kEncoderCPR = 1024;
     public static final double kWheelDiameterInches = 6;
@@ -52,9 +38,11 @@ public final class Constants {
         (kWheelDiameterInches * Math.PI) / (double) kEncoderCPR;
   }
 
-  public static final class HatchConstants {
-    public static final int kHatchSolenoidModule = 0;
-    public static final int[] kHatchSolenoidPorts = new int[] {0, 1};
+  public static final class ElevatorConstants {
+    public static final int kRightPokeyMotorID = 2;
+    public static final int kLeftPokeyMotorID = 3;
+    public static final int kPulleyMotorID = 1;
+    public static final int kLaserEyePort = 0;
   }
 
   public static final class AutoConstants {

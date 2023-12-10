@@ -67,7 +67,7 @@ public class DriveTrain extends SubsystemBase {
       }
 
     public void drive(double xSpeed, double ySpeed, double zRot) {
-        m_drive.driveCartesian(xFilter.calculate(xSpeed),yFilter.calculate(ySpeed),rotFilter.calculate(zRot));
+        m_drive.driveCartesian(ySpeed,xSpeed,zRot);
     }
 
     public void oneMotor(double speed, int motor) {
