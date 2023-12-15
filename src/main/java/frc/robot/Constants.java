@@ -43,8 +43,9 @@ public final class Constants {
     public static final int kLeftPokeyMotorID = 3;
     public static final int kPulleyMotorID = 1;
     public static final int kDistanceSensorPort = 0;
-    public static final double kPokeySpeed = 0.8;
-    public static final double[] setPoints = {0,00,0,0};
+    public static final double kPokeySpeed = 0.6;
+    //shelves are 4", 18", 32", 46" from floor
+    public static final double[] setPoints = {1.254882684,0,0,0};
     public static final double kBangBangSpeed = 0.4;
   }
 

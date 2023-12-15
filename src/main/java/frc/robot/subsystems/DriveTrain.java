@@ -101,6 +101,10 @@ public class DriveTrain extends SubsystemBase {
 
         }
     }
+
+    public MecanumDrive getDrive() {
+        return m_drive;
+    }
     /* 
     private final MecanumDriveKinematics m_kinematics =
       new MecanumDriveKinematics(

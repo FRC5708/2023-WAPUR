@@ -28,6 +28,6 @@ public class DefaultDrive extends CommandBase {
         //m_ySpeed = SmartDashboard.getNumber("Y",0);
         //m_rotation = SmartDashboard.getNumber("rotation",0);
 
-        m_drive.drive(m_xSpeed.getAsDouble(),m_ySpeed.getAsDouble(),m_rotation.getAsDouble());
+        m_drive.drive(m_xSpeed.getAsDouble(),-m_ySpeed.getAsDouble(),m_rotation.getAsDouble());
     }
 }
