@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 
+import edu.wpi.first.math.filter.SlewRateLimiter;
 
 
 
@@ -36,6 +37,11 @@ public class DriveTrain extends SubsystemBase {
     // Right side motors
     private WPI_TalonSRX m_frontRightMotor = new WPI_TalonSRX(DriveConstants.kFrontRightMotorID);
     private WPI_TalonSRX m_rearRightMotor = new WPI_TalonSRX(DriveConstants.kRearRightMotorID);
+
+    SlewRateLimiter xFilter = new SlewRateLimiter(DriveConstants.xSlewRate);
+    SlewRateLimiter yFilter = new SlewRateLimiter(DriveConstants.ySlewRate);
+    SlewRateLimiter rotFilter = new SlewRateLimiter(DriveConstants.rotSlewRate);
+
 
     private final MecanumDrive m_drive = new MecanumDrive(m_frontLeftMotor,m_rearLeftMotor,m_frontRightMotor,m_rearRightMotor);
     
@@ -62,6 +68,7 @@ public class DriveTrain extends SubsystemBase {
 
     public void drive(double xSpeed, double ySpeed, double zRot) {
         m_drive.driveCartesian(ySpeed,xSpeed,zRot);
+        m_drive.feed();
     }
 
     public void oneMotor(double speed, int motor) {
@@ -93,6 +100,10 @@ public class DriveTrain extends SubsystemBase {
             break;
 
         }
+    }
+
+    public MecanumDrive getDrive() {
+        return m_drive;
     }
     /* 
     private final MecanumDriveKinematics m_kinematics =
