@@ -24,10 +24,10 @@ public final class Constants {
     //public static final int kLeftArmMotorID = 3;
 
 
-    public static final double driveSpeed = 0.5;
-    public static final double xSlewRate = 0.9;
-    public static final double ySlewRate = 0.9;
-    public static final double rotSlewRate = 0.9;
+    public static final double driveSpeed = 1;
+    public static final double xSlewRate = 1;
+    public static final double ySlewRate = 1;
+    public static final double rotSlewRate = 1;
 
 
 

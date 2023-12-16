@@ -22,14 +22,14 @@ public class BasicAuto extends CommandBase {
 
     @Override
     public void execute() {
-        m_drive.drive(0,.3,0);
+        m_drive.drive(0,.4,0);
         System.out.println("executing");
     }
 
     @Override
     public boolean isFinished() {
         double diff = Math.abs(startTime - java.lang.System.currentTimeMillis());
-        if ( diff > 1000){
+        if ( diff > 3000){
             System.out.println("command finished");
             m_drive.drive(0.0,0,0);
             return true;
